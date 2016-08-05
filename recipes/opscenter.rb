@@ -18,7 +18,8 @@
 # Set up the datastax repo in yum or apt depending on the OS
 include_recipe 'dse::_repo'
 
-# java
+# java - jdk 8 is required for 6.0.1
+node.default['java']['jdk_version'] = '8'
 include_recipe 'java'
 
 package 'opscenter' do
