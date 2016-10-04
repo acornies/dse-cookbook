@@ -17,7 +17,7 @@ default['cassandra']['packages']               = ['dse-libcassandra',
                                                   'dse-libhadoop-native',
                                                   'dse-libhadoop2-client',
                                                   'dse-libhadoop2-client-native',
-                                                  'dse-libgraph'
+                                                  'dse-libgraph',
                                                   'dse',
                                                   'dse-libhive',
                                                   'dse-hive',
