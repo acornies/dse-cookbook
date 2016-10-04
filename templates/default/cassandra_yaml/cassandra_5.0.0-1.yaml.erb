@@ -514,10 +514,6 @@ listen_interface: <%= node[:cassandra][:listen_interface] %> #eth0
 <% end %>
 # listen_interface_prefer_ipv6: false
 
-# Address to broadcast to other Cassandra nodes
-# Leaving this blank will set it to the same value as listen_address
-rpc_address: <%= node[:cassandra][:rpc_address] %> # localhost
-
 # When using multiple physical network interfaces, set this
 # to true to listen on broadcast_address in addition to
 # the listen_address, allowing nodes to communicate in both

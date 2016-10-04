@@ -8,13 +8,16 @@ default['cassandra']['graph']                  = false
 default['cassandra']['hadoop']                 = false
 default['cassandra']['spark']                  = false
 
-default['cassandra']['dse_version']            = '4.7.2-1'
+default['cassandra']['dse_version']            = '5.0.1-1'
 default['cassandra']['jamm_version']           = '0.3.0'
 default['cassandra']['forcermi']               =  false
 # The order of this package list is important to be able to install a version other than the latest
 default['cassandra']['packages']               = ['dse-libcassandra',
                                                   'dse-libhadoop',
                                                   'dse-libhadoop-native',
+                                                  'dse-libhadoop2-client',
+                                                  'dse-libhadoop2-client-native',
+                                                  'dse-libgraph'
                                                   'dse',
                                                   'dse-libhive',
                                                   'dse-hive',
@@ -25,14 +28,13 @@ default['cassandra']['packages']               = ['dse-libcassandra',
                                                   'dse-libsolr',
                                                   'dse-libsqoop',
                                                   'dse-pig',
+                                                  'dse-full',
                                                   'dse-demos'
                                                  ]
 
 unless node['cassandra']['dse_version'].match(/4\.0.*/)
   default['cassandra']['packages'] << 'dse-libspark'
 end
-
-default['cassandra']['packages'] << 'dse-full'
 
 default['cassandra']['user']                   = 'cassandra'
 default['cassandra']['group']                  = 'cassandra'
