@@ -80,3 +80,6 @@ CASSANDRA_GROUP=<%= node[:cassandra][:group] %>
 
 # Spark configuration files location
 SPARK_CONF_DIR=/etc/dse/spark
+
+# Timeout threshold (default:14 is sometimes too short)
+WAIT_FOR_START=20
